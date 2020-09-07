@@ -3,13 +3,24 @@ import SearchBar from './SearchBar'
 import { BrowserRouter as Router, NavLink, Link } from 'react-router-dom'
 import { FaEllipsisV, FaUserAlt } from 'react-icons/fa'
 
+const styles = {
+    logo: {
+        width: '180px',
+        height: '60px'
+    },
+    loginText: {
+        position: 'relative',
+        right: '8px'
+    }
+}
+
 export default function Nav() {
     return (
         <div className='container'>
             <Router>
                 <nav className='nav-container'>
                     
-                    <Link to='/Home'><img id='logo' src='https://uc0c684ec10e1b36faa1bde7bd63.previews.dropboxusercontent.com/p/thumb/AA7PJWouibgtUEtXmoCU0UkRRK5ea6a3CLMvE9EYRgo4hglxnshO9FQgU0F4yMbOutxYeZaS2xH36TYK1bdEGr9P8tdP0Ak54IWDkWB4_XXvW0PQNqSSIsOy1p79Cs4iSqLQYqt456wZVhwTmBPWAk6PSPsLFPb5_mDz-tQsVxOb9RQi4JdEgYzSVpL94rWIMGRJktn8k_urnpBjuKT3pKjQtuoQSUg_I-7JfMN06WMGiNnKhEbh5iNF49dqmTR4gfobVe-EtdNejO1lXdkXFpOMxAEevm_Yu1LDcERD3wnK1eJPQ8QjWvXfLGr6QSUYTqoEj9mmHBPwnp0kSf7l9TJMtCe1uboi6UwTMqjaKGNUqQ/p.png?fv_content=true&size_mode=5' alt='GIPHY logo' /></Link>
+                    <Link to='/Home'><img style={styles.logo} src='https://uc8a73b280bff26fabfd53eb48fe.previews.dropboxusercontent.com/p/thumb/AA6VJkG06ZhdxfvPC7IuDR0uB0AQkHwNqtc4SlKXTn5F9k7hj78tgh84JGmAU-AyXL3juijrhY_joILMSbmrjr93pSBXznJ9XlMEiQHHeQ7Kz1d0UEsmBbSHrEv5LNh4oqvmsXclDPdB4m-o7sGkHt65n6TnUTx8fXkWwQjq_ElUfsJTrGO82SQ2YFKdyWbxihMUZ-XwMyja5J0pEyYINaS2XzS85TjCGWYKxohX6DAO2eY1dAGX9Kr21oApIvCi0-FyUrSs2ET8M4Tap-bQaqn_zXykYalilBNIuc9JZ-YTHum3qRHO2z77DpDiwiI6_mEhQmgUvZCbYc0qddrlbqAkdKTFwXNA9BPGOlRi56c5Vw/p.png?fv_content=true&size_mode=5' alt='GIPHY logo' /></Link>
                     
                     <ul className='row'>
                         <li>
@@ -54,7 +65,7 @@ export default function Nav() {
                         </li>
                     </ul>
 
-                    <ul className='user-submit-container row'>
+                    <ul className='row'>
                         <li>
                             <NavLink className='nav-link user-submit' to='/Upload'>
                                 Upload
@@ -67,15 +78,15 @@ export default function Nav() {
                         </li>
                     </ul>
                     
-                    <ul className='user-login-container row'>
+                    <ul className='row'>
+                    <NavLink className='nav-link login-nav-link' to='/Login'>
                         <li className='user-icon-container'>
                             <FaUserAlt color='white' />
                         </li>
-                        <li className='login-nav-link'>
-                            <NavLink className='nav-link login-nav-link' to='/Login'>
-                                Log In
-                            </NavLink>
+                        <li style={styles.loginText}>
+                            Log In
                         </li>
+                    </NavLink>
                     </ul>
                 </nav>
             </Router>

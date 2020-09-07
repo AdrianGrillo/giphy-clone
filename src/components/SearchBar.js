@@ -11,10 +11,20 @@ const searchIconStyle = {
 
 export default function SearchBar() {
     const [input, setInput] = React.useState('')
+    const [placeholderText, setPlaceholderText] = React.useState('Search all the GIFs and Stickers')
 
     const updateInput = (e) => {
         setInput(e.target.value)
     }
+
+    React.useEffect(() => {
+        const id = window.setInterval(() => placeholderText === 'Search all the GIFs and Stickers' 
+            ? setPlaceholderText('@username + tag to search within a verified channel') 
+            : setPlaceholderText('Search all the GIFs and Stickers')
+        , 2800)
+
+        return () => window.clearInterval(id)
+    })
 
     return (
         <div className='container'>
@@ -22,7 +32,7 @@ export default function SearchBar() {
                 <form className='row'>
                     <input 
                         className='search-bar'
-                        placeholder='Search all the GIFs and Stickers'
+                        placeholder={placeholderText}
                         type='text'
                         value={input}
                         onChange={(e) => updateInput(e)}

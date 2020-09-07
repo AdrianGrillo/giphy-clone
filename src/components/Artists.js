@@ -16,8 +16,8 @@ export default function Artists() {
         `https://api.giphy.com/v1/gifs/search?api_key=${api}&q=artists&limit=25&offset=0&rating=g&lang=en` 
     )
 
-    /* No API endpoint for artists specifically so we're using the trending stickers endpoint and pulling the usersnames
-    from those trending stickers to display when each sticker is hovered over */
+    /* No API endpoint for artists specifically so we're using the search with query "Artists" endpoint and pulling the 
+    gifs and usernames from the results to display when each gif is hovered over */
 
     if(loading === true) {
         return <p>Loading</p>
