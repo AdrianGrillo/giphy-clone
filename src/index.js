@@ -4,6 +4,7 @@ import './css/index.css';
 import Nav from './components/Nav'
 import Trending from './components/Trending'
 import Artists from './components/Artists'
+import Stickers from './components/Stickers'
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Trending />
 
       <Artists />
+
+      <Stickers />
     </div>
   )
 }
