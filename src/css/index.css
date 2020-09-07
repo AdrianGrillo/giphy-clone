@@ -1,0 +1,312 @@
+
+html, body, #app {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: rgb(18,18,18);
+  font-family: calibri, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.error {
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+/* <----- Nav -----> */
+
+
+
+
+
+.nav-container {
+  width: 100%;
+  display: flex;
+}
+
+#logo {
+  width: 180px;
+  height: 60px;
+}
+
+.nav-container ul {
+  width: 600px;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  margin: 0;
+}
+
+.nav-links-container {
+  height: 60px;
+  margin: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 5px 12px;
+  text-decoration: none;
+  color: white;
+  background: rgb(18, 18, 18);
+  font-weight: 550;
+  font-size: 14px;
+  border-right: 4px solid rgb(18,18,18);
+  -webkit-transition: linear .25s;
+  -moz-transition: linear .25s;
+  -o-transition: linear .25s;
+  transition: linear .25s;
+}
+
+.nav-link-hover:hover {
+  background: red;
+}
+
+/* 
+CSS gradient transitions not supported. This is transitioning the opacity of a psuedo-element that
+is a gradient to show when the nav-link is hovered over
+*/
+
+.burger {
+  cursor: pointer;
+}
+
+.user-submit-container {
+  height: 60px;
+  display: flex;
+  flex: 1;
+}
+
+.user-submit {
+  background: #a400ff;
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+
+.user-login-container {
+  height: 60px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.user-icon-container {
+  background: rgb(80, 80, 80);
+  display: flex;
+  height: 35px;
+  width: 38px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24px;
+  padding: 0;
+}
+
+.login-nav-link {
+  display: flex;
+  width: 160px;
+  align-items: center;
+  justify-content: center;
+  background: rgb(60, 60, 60);
+  height: 25px;
+}
+
+
+
+
+
+/* <----- SearchBar -----> */
+
+
+
+
+
+.search-bar {
+  width: 97.1%;
+  border: none;
+  height: 22px;
+  font-size: 17px;
+  padding: 15px;
+}
+
+.search-btn {
+  height: 100%;
+  padding: 0 9px;
+  border: none;
+  background: linear-gradient(-135deg, #bd4faf, #8ca585, #4cc52a, #784fbd, #bbd2b4, #576553, #afea9d, #282466, #4fbd88, #4fbd53);
+  background-size: 4000% 4000%;
+
+  -webkit-animation: search-button-animation 20s ease infinite;
+  -moz-animation: search-button-animation 20s ease infinite;
+  -o-animation: search-button-animation 20s ease infinite;
+  animation: search-button-animation 20s ease infinite;
+}
+
+@-webkit-keyframes search-button-animation {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@-moz-keyframes search-button-animation {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@-o-keyframes search-button-animation {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@keyframes search-button-animation { 
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+
+.search-bar::placeholder {
+  height: 80%;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+
+
+
+/* <----- Home Page GIF Containers -----> */
+
+
+
+
+
+/* Default styles for the containers on the home page, anything else is changed as needed */
+
+.gif-container-header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* try this icon class with the videos section, if it doesnt work then each file will have a separate object for icon styles */
+
+.gif-header-icon {
+  height: 40px;
+  width: 30px;
+}
+
+.gif-header-text {
+  font-size: 22px;
+  padding-left: 5px;
+  position: relative;
+  bottom: 9px;
+  color: white;
+}
+
+.gifs-header-link {
+  font-size: 14px;
+  color: lightgrey;
+  opacity: .7;
+  text-decoration: none;
+}
+
+.gifs-header-chevron {
+  height: 13px;
+  color: lightgrey;
+  opacity: .7;
+  position: relative;
+  top: 2px;
+}
+
+.gif-scroll {
+  position: relative;
+  bottom: 10px;
+  overflow: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.gif-scroll::-webkit-scrollbar { 
+  display: none;
+}
+
+.gifs-to-scroll {
+  padding-right: 6px;
+}
+
+
+
+
+/* <----- Trending -----> */
+
+
+
+
+
+.trending-container {
+  height: 200px;
+  margin-top: 33px;
+}
+
+.trending-scroll img {
+ max-height: 145px;
+}
+
+
+
+
+
+/* <----- Artists -----> */
+
+
+
+
+
+.artists-container {
+  height: 300px;
+  margin-top: 25px;
+}
+
+.artists-scroll img {
+  height: 250px;
+}
