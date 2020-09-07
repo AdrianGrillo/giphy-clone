@@ -56,27 +56,14 @@ code {
 
 
 .nav-container {
-  width: 100%;
   display: flex;
 }
 
-#logo {
-  width: 180px;
-  height: 60px;
-}
-
 .nav-container ul {
-  width: 600px;
   align-items: center;
-  justify-content: space-between;
-  height: 60px;
   margin: 0;
 }
 
-.nav-links-container {
-  height: 60px;
-  margin: 0;
-}
 
 .nav-link {
   display: flex;
@@ -86,7 +73,6 @@ code {
   text-decoration: none;
   color: white;
   background: rgb(18, 18, 18);
-  font-weight: 550;
   font-size: 14px;
   border-right: 4px solid rgb(18,18,18);
   -webkit-transition: linear .25s;
@@ -108,46 +94,26 @@ is a gradient to show when the nav-link is hovered over
   cursor: pointer;
 }
 
-.user-submit-container {
-  height: 60px;
-  display: flex;
-  flex: 1;
-}
-
 .user-submit {
   background: #a400ff;
-  display: flex;
-  align-items: center;
-  height: 25px;
-}
-
-.user-login-container {
-  height: 60px;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-around;
 }
 
 .user-icon-container {
   background: rgb(80, 80, 80);
   display: flex;
   height: 35px;
-  width: 38px;
+  width: 40px;
   align-items: center;
   justify-content: center;
-  margin-left: 24px;
-  padding: 0;
+  position: relative;
+  right: 60px;
 }
 
 .login-nav-link {
-  display: flex;
-  width: 160px;
-  align-items: center;
+  width: 152px;
+  margin-left: 35px;
   justify-content: center;
   background: rgb(60, 60, 60);
-  height: 25px;
 }
 
 
@@ -166,6 +132,14 @@ is a gradient to show when the nav-link is hovered over
   height: 22px;
   font-size: 17px;
   padding: 15px;
+}
+
+.search-bar::placeholder {
+  height: 80%;
+}
+
+.search-bar:focus {
+  outline: none;
 }
 
 .search-btn {
@@ -202,13 +176,6 @@ is a gradient to show when the nav-link is hovered over
   100%{background-position:0% 47%}
 }
 
-.search-bar::placeholder {
-  height: 80%;
-}
-
-.search-bar:focus {
-  outline: none;
-}
 
 
 
@@ -228,7 +195,7 @@ is a gradient to show when the nav-link is hovered over
   justify-content: space-between;
 }
 
-/* try this icon class with the videos section, if it doesnt work then each file will have a separate object for icon styles */
+/* try this icon class with the videos section, if it doesnt work then each file will have an object for icon styles */
 
 .gif-header-icon {
   height: 40px;
@@ -309,4 +276,27 @@ is a gradient to show when the nav-link is hovered over
 
 .artists-scroll img {
   height: 250px;
+}
+
+
+
+
+
+/* <----- Stickers -----> */
+
+
+
+
+
+.sticker-grid {
+  height: 500px;
+  margin-top: 50px;
+  background: red;
+}
+
+.stickers-in-grid {
+  position: relative;
+  bottom: 10px;
+  overflow: hidden;
+  scroll-behavior: smooth;
 }
