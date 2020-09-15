@@ -31,8 +31,8 @@ export default function Trending() {
                             <span className='gif-header-text'>Trending</span>
                         </div>
                         <div >
-                            <Link className='gifs-header-link' to='/Trending'>All The GIFs</Link>
-                            <FaChevronRight className='gifs-header-chevron' />
+                            <Link className='gifs-header-link' to='/Trending'>All The GIFs
+                            <FaChevronRight className='gifs-header-chevron' /></Link>
                         </div>
                     </div>
 

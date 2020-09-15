@@ -20,7 +20,7 @@ export default function Nav() {
             <Router>
                 <nav className='nav-container'>
                     
-                    <Link to='/Home'><img style={styles.logo} src='https://uc8a73b280bff26fabfd53eb48fe.previews.dropboxusercontent.com/p/thumb/AA6VJkG06ZhdxfvPC7IuDR0uB0AQkHwNqtc4SlKXTn5F9k7hj78tgh84JGmAU-AyXL3juijrhY_joILMSbmrjr93pSBXznJ9XlMEiQHHeQ7Kz1d0UEsmBbSHrEv5LNh4oqvmsXclDPdB4m-o7sGkHt65n6TnUTx8fXkWwQjq_ElUfsJTrGO82SQ2YFKdyWbxihMUZ-XwMyja5J0pEyYINaS2XzS85TjCGWYKxohX6DAO2eY1dAGX9Kr21oApIvCi0-FyUrSs2ET8M4Tap-bQaqn_zXykYalilBNIuc9JZ-YTHum3qRHO2z77DpDiwiI6_mEhQmgUvZCbYc0qddrlbqAkdKTFwXNA9BPGOlRi56c5Vw/p.png?fv_content=true&size_mode=5' alt='GIPHY logo' /></Link>
+                    <Link to='/Home'><img style={styles.logo} src='https://uc928ebac87ad1d7ad4d2624fc0a.previews.dropboxusercontent.com/p/thumb/AA5JjVTGZf7kJ19UHF3qTHYS1sxy5_SHyhXOhyioVnD2vFpxGBDzbKovGHz7smxDQYKLDQz79gt9BEBHBauQO6yt1vjraZ72VQ6VC8_WjjNN105LWhYaMXrCXWAJyd6ztq1aY_goU0nTz9gwCb5GjMvwVq-z6kX5L4wg9ml0N1cWEc6DXfdBNx2m49n8Kt0696uguCBwGHwx_oElTT9zRgdvKdM2dn8MT6-kXIkAXMKu7ymxuOly4nMbXvxyVPDKEa93Crf1HUJcKq_qjBuzNAVRjykSq_UEwRcBG9u8ekeXacmLsO3XAhCTqaABnpbMuw4QgaakW0-gPo5o0JqC0vIHba9kURf1CRyOXWjaxqsNIg/p.png?fv_content=true&size_mode=5' alt='GIPHY logo' /></Link>
                     
                     <ul className='row'>
                         <li>
