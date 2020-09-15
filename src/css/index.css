@@ -86,7 +86,7 @@ code {
 }
 
 /* 
-CSS gradient transitions not supported. This is transitioning the opacity of a psuedo-element that
+CSS gradient transitions not supported. I'll have to transition the opacity of a psuedo-element that
 is a gradient to show when the nav-link is hovered over
 */
 
@@ -146,7 +146,7 @@ is a gradient to show when the nav-link is hovered over
   height: 100%;
   padding: 0 9px;
   border: none;
-  background: linear-gradient(-135deg, #bd4faf, #8ca585, #4cc52a, #784fbd, #bbd2b4, #576553, #afea9d, #282466, #4fbd88, #4fbd53);
+  background: linear-gradient(-135deg, #bd4faf, #8ca585, #784fbd, #bbd2b4, #afea9d, #282466, #4fbd88);
   background-size: 4000% 4000%;
 
   -webkit-animation: search-button-animation 20s ease infinite;
@@ -194,8 +194,6 @@ is a gradient to show when the nav-link is hovered over
   align-items: center;
   justify-content: space-between;
 }
-
-/* try this icon class with the videos section, if it doesnt work then each file will have an object for icon styles */
 
 .gif-header-icon {
   height: 40px;
@@ -288,15 +286,113 @@ is a gradient to show when the nav-link is hovered over
 
 
 
-.sticker-grid {
+.stickers-container {
   height: 500px;
-  margin-top: 50px;
-  background: red;
+  margin-top: 35px;
 }
 
-.stickers-in-grid {
-  position: relative;
-  bottom: 10px;
+.stickers-scroll {
+background: linear-gradient(-135deg, #bd4faf, #8ca585, #784fbd, #bbd2b4, #afea9d, #282466, #4fbd88);
+background-size: 4000% 4000%;
+-webkit-animation: sticker-scroll-animation 20s ease infinite;
+-moz-animation: sticker-scroll-animation 20s ease infinite;
+-o-animation: sticker-scroll-animation 20s ease infinite;
+animation: sticker-scroll-animation 20s ease infinite;
+}
+
+@-webkit-keyframes sticker-scroll-animation {
+0%{background-position:0% 47%}
+50%{background-position:100% 54%}
+100%{background-position:0% 47%}
+}
+@-moz-keyframes sticker-scroll-animation {
+0%{background-position:0% 47%}
+50%{background-position:100% 54%}
+100%{background-position:0% 47%}
+}
+@-o-keyframes sticker-scroll-animation {
+0%{background-position:0% 47%}
+50%{background-position:100% 54%}
+100%{background-position:0% 47%}
+}
+@keyframes sticker-scroll-animation { 
+0%{background-position:0% 47%}
+50%{background-position:100% 54%}
+100%{background-position:0% 47%}
+}
+
+.stickers-scroll {
+  margin-top: 15px;
+}
+
+.stickers-scroll img {
+  height: 460px;
+  border-right: rgb(18,18,18) solid 3px;
+}
+
+
+
+
+
+/* <----- Infinite Scroll -----> */
+
+
+
+
+
+.infinite-scroll-container {
+  margin-top: 90px;
+  height: 1500px;
+}
+
+.infinite-scroll-gifs {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+#zoom-container {
+  height: 300px;
+  width: 342px;
   overflow: hidden;
-  scroll-behavior: smooth;
+}
+
+.infinite-scroll-gifs img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 3px;
+  transition: transform .2s;
+}
+
+.infinite-scroll-gifs img:hover {
+  transform: scale(1.2);
+}
+
+.box-shadow-one {
+  width: 342px;
+  background: #BA55D3;
+  height: 3px;
+  opacity: .9;
+}
+
+.box-shadow-two {
+  position: relative;
+  left: 11px;
+  width: 320px;
+  background: #9932CC;
+  height: 5px;
+  opacity: .7;
+}
+
+.box-shadow-three {
+  position: relative;
+  left: 23px;
+  width: 296px;
+  background: #9400D3;
+  height: 5px;
+  margin-bottom: 10px;
+  opacity: .5;
 }
