@@ -6,12 +6,27 @@ import useInfiniteScroll from '../hooks/useInfiniteScroll'
 const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
 export default function InfiniteScroll() {
-    const {loading, error, data: gifs} = useInfiniteScroll(
-        `https://api.giphy.com/v1/gifs/search?api_key=${api}&q=random&limit=24&offset=0&rating=g&lang=en`
+    const [offset, setOffset] = React.useState(0)
+ 
+    const { loading, error, data: gifs } = useInfiniteScroll(
+        `https://api.giphy.com/v1/gifs/search?api_key=${api}&q=random+search+lol&limit=24&offset=${offset}&rating=g&lang=en`, offset
     )
+
 
     /* GIPHY API doesn't supply more than a single random gif at a time so here we're searching the word random and displaying
     the results instead of making 24 different API calls everytime the page loads more GIFs */
+
+    const observer = React.useRef()
+    const infiniteScrollTriggerRef = React.useCallback(node => {
+        if(loading) return 
+        if(observer.current) observer.current.disconnect()
+        observer.current = new IntersectionObserver(entries => {
+            if(entries[0].isIntersecting) {
+                setOffset(prevOffset => prevOffset + 24)
+            }
+        })
+        if(node) observer.current.observe(node)
+    }, [loading])
 
     if(loading) {
         return <div>Loading...</div>
@@ -38,20 +53,33 @@ export default function InfiniteScroll() {
                     </div>
 
                     <div className='infinite-scroll-gifs'>
-                        {gifs.data.map(gif => {
-                            return(
+                        {gifs.data.map((gif, index) => {
+                            /* Create a ref to item 24, when this item is displayed it will trigger the infinite scroll hook */
+                            if(gifs.data.length === index + 1) {
+                                return (
+                                <div ref={infiniteScrollTriggerRef} key={gif.id}>
+                                    <div id='zoom-container'>
+                                        <img src={gif.images.fixed_height.url} alt='Random GIF'></img>
+                                    </div>
+                                    <div className='box-shadow-one'></div>
+                                    <div className='box-shadow-two'></div>
+                                    <div className='box-shadow-three'></div>
+                                </div>
+                                )
+                            } else {
+                            return (
                                 <div key={gif.id}>
                                     <div>
                                         <div id='zoom-container'>
                                             <img src={gif.images.fixed_height.url} alt='Random GIF'></img>
                                         </div>
-                                            <div className='box-shadow-one'></div>
-                                            <div className='box-shadow-two'></div>
-                                            <div className='box-shadow-three'></div>
+                                        <div className='box-shadow-one'></div>
+                                        <div className='box-shadow-two'></div>
+                                        <div className='box-shadow-three'></div>
                                     </div>
                                 </div>
                             )
-                        })}
+                        }})}     
                     </div>
 
                 </div>

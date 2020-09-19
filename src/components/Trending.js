@@ -2,12 +2,12 @@ import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { FaChevronRight } from 'react-icons/fa'
 import MdTrendingUp from 'react-ionicons/lib/MdTrendingUp'
-import useFetch from '../hooks/useFetch'
+import useAxios from '../hooks/useAxios'
 
 const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
 export default function Trending() {
-    const { loading, data: gifs, error } = useFetch(
+    const { loading, data: gifs, error } = useAxios(
         `https://api.giphy.com/v1/gifs/trending?api_key=${api}&limit=25&rating=g`
     )
 

@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { FaBolt, FaChevronRight } from 'react-icons/fa'
-import useFetch from '../hooks/useFetch'
+import useAxios from '../hooks/useAxios'
 
 const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
 export default function Artists() {
-    const { loading, data: gifs, error } = useFetch (
+    const { loading, data: gifs, error } = useAxios (
         `https://api.giphy.com/v1/gifs/search?api_key=${api}&q=hd&limit=25&offset=0&rating=g&lang=en` 
     )
     
