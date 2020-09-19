@@ -374,25 +374,25 @@ animation: sticker-scroll-animation 20s ease infinite;
 .box-shadow-one {
   width: 342px;
   background: #BA55D3;
-  height: 3px;
+  height: 4px;
   opacity: .9;
 }
 
 .box-shadow-two {
   position: relative;
-  left: 11px;
-  width: 320px;
+  left: 6px;
+  width: 330px;
   background: #9932CC;
-  height: 5px;
+  height: 6px;
   opacity: .7;
 }
 
 .box-shadow-three {
   position: relative;
-  left: 23px;
-  width: 296px;
+  left: 12px;
+  width: 318px;
   background: #9400D3;
-  height: 5px;
+  height: 6px;
   margin-bottom: 10px;
   opacity: .5;
 }
