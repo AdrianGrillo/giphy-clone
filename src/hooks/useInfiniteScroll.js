@@ -1,6 +1,19 @@
 import React from 'react'
 import Axios from 'axios'
 
+/* Almost everything works. All good with the intersection observer, axios is making API requests just fine.
+Issue here is that when scrolling to the bottom of the page, the new API data is replacing the old data instead of 
+being added to it in new containers. Tried fixing this with a functional useState hook to account for previous data but with 
+that I have a type error when trying to map objects from the array I'm combining the old and new data in.
+
+Thought that maybe I was mutating the response from the API by placing the data inside of another array and tried 
+to account for that by returning the 0th index of the "mutated" array but it didn't make a difference. I wrote a lot of code
+just trying anything I thought might be the problem but it's been four days so I'm going to continue with the rest of the
+project.
+
+All of the infastructure I created will be left inside of new branch in github. At the end of the project I'll revisit 
+this and see if I can make it work with the new skills/ research I've aquired between now and then. */
+
 function scrollReducer(state, action) {
     if(action.type === 'fetch') {
         return {
