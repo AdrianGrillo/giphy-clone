@@ -1,22 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './css/index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './css/index.css'
+import {
+  BrowserRouter as Router,
+  Switch, 
+  Route
+} from 'react-router-dom'
 import Nav from './components/Nav'
-import Trending from './components/Trending'
-import Artists from './components/Artists'
-import Stickers from './components/Stickers'
+import HomeComponents from './components/home-components/HomeComponents'
+import SearchResults from './components/search-components/SearchResults'
+import ReactionsPage from './components/reaction-page-components/ReactionsPage'
 
 function App() {
   return (
-    <div>
-      <Nav />
+    <Router>
+      <div className='container'>
 
-      <Trending />
+        <Nav />
+          
+        <React.Suspense>
+          <Switch>
 
-      <Artists />
+            <Route exact path='/' component={HomeComponents} />
 
-      <Stickers />
-    </div>
+            <Route path='/search=(.*)/' render={({ location }) => <SearchResults location={location} />} />
+
+            <Route path='/Reactions' component={ReactionsPage} />
+
+            <Route render={() => <h1>404</h1>} />
+
+          </Switch>
+        </React.Suspense>
+
+      </div>
+    </Router>
   )
 }
 
