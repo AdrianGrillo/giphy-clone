@@ -19,9 +19,9 @@ export default function Nav() {
 
     return (
         <div className='container'>
-            <nav className='nav-container'>
+            <nav className='flex'>
                 
-                <Link to='/'><img style={styles.logo} src='https://uc84b3745fa1b19af39f185c939e.previews.dropboxusercontent.com/p/thumb/AA6EVDrQDwZ-TzaUvE722VxIFC4a5PCSecV01ncP_muY06_KgcfzBg1MXTReMnKYlbbqXyqbV7gbyeOFV8B_DvtFZUXX-IsKii8nrWXQIXMFa1Iy2a-LCnfuyHBsWYF9vXhVWlCk3DpmAH8fJVgtvuKpRAxWFA_K0JYOUS9vV__7BXo8pN7tHH5ymFjp0YHu6TQiOZkwybh5au_i8t-pfsHLxjIhjFaHvZqDpqnUMYj12Plc-hG60oBX9y7ntc36BLzFRYDEDuAI9SGmkdtAFpl3k31Ojq7sxImD8zV_2TQA3mqRfwUsNAg13uCxbIY-tLkigXBwGEzSGa4A2Kr4vzZwBQ9w3q31Vew9W-q4egkMQQ/p.png?fv_content=true&size_mode=5' alt='GIPHY logo' /></Link>
+                <Link to='/'><img style={styles.logo} src='https://ucc1c6e29e5c0dc333f0bc673549.previews.dropboxusercontent.com/p/thumb/AA-aQysQrMy_rSNG3l9VdavdeCttCWxrhgRdIFeqy-dOiiTwo5Q2G7Whmv216ZtsFYkTeB1Iw38Pt-w6FSHG8_4t-sDq8wWo0oXXNymJJAE8VZSMiyUsJ1QuZNFGg3HOIbqKlLXuRv0ajRg-ilj6aTHSekDOsFUZ_R14o-p0uA_POVKuQVN9mYrVDPHFgK2431kF7khpgWMiJakQal2BBV-yaHtsrabZZWitI_r9Ls_x3ys17Ty2MxdbXvT56HUQEGikETktC7xIyZ8US4pJQrNhKFIh2n6RuaWLKYcNJHVEPYqPFgESgD2wrksP7Cb3Amn9baxyRV3arUqyjyQlAxaz_5LC1tusLBt7RczxDGO_UA/p.png?fv_content=true&size_mode=5' alt='GIPHY logo' /></Link>
                 
                 <ul className='row'>
 
@@ -40,10 +40,10 @@ export default function Nav() {
                     })}
 
                     <li>
-                        <div className='nav-link nav-link-hover burger'>
+                        <div className='nav-link nav-link-hover pointer'>
                             <FaEllipsisV color='white' />
                         </div>
-                        <div className='nav-color-bar'></div>
+                        <div className='nav-color-bar pointer'></div>
                     </li>
                 </ul>
 
@@ -62,7 +62,7 @@ export default function Nav() {
                 
                 <ul className='row'>
                 <Link className='nav-link login-nav-link' to='/Login'>
-                    <li className='user-icon-container'>
+                    <li className='flex relative user-icon-container'>
                         <FaUserAlt color='white' />
                     </li>
                     <li style={styles.loginText}>
