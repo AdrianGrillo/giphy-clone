@@ -1,0 +1,147 @@
+/* <----- SideBar -----> */
+
+
+
+
+
+.sidebar-container {
+    width: 208px;
+    /* background: red; */
+    margin-top: 30px;
+    color: lightgrey;
+    opacity: .7;
+}
+
+.sidebar-container img {
+    height: 200px;
+    width: 200px;
+}
+
+.tagline {
+    font-size: 13px;
+    /* color: lightgrey;
+    opacity: .7; */
+    font-weight: 400;
+}
+
+.social-links-container {
+    width: 100px;
+    justify-content: space-between;
+}
+
+.social-links-container a {
+    color: #b500d1;
+}
+
+.small-searchbar-container {
+    margin-top: 15px;
+    height: 40px;
+    padding-bottom: 15px;
+}
+
+.small-searchbar-container input {
+    height: 27px;
+    border: solid 2px rgb(80, 80, 80);
+    background: rgb(18, 18, 18);
+    color: white;
+}
+
+.small-searchbar-container input:focus {
+    outline: none;
+}
+
+.small-searchbar-container input::placeholder {
+    height: 100%;
+}
+
+.small-searchbar-container button {
+    position: relative;
+    top: 5px;
+    right: 5px;
+    border: solid 2px rgb(80, 80, 80);
+    background: rgb(80, 80, 80);
+}
+
+.trending-text {
+    color: white;
+    padding-bottom: 15px;
+    font-weight: 400;
+}
+
+
+
+
+
+/* <----- Header -----> */
+
+
+
+
+
+.handle {
+    bottom: 13px;
+    color: lightgrey;
+    opacity: .7;
+}
+
+
+
+
+
+/* <----- Main Container -----> */
+
+
+
+
+
+.offset-container {
+    position: relative;
+    height: 1px;
+    left: 220px;
+    bottom: 730px;
+    width: 820px;
+    color: white;
+    background: red;
+}
+
+.nav-linked-stickers-container {
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.nav-linked-sticker {
+    height: 200px;
+    width: 200px;
+}
+
+.nav-linked-sticker img {
+    height: 200px;
+    width: 200px;
+}
+
+.featured-gifs {
+    margin-top: 60px;
+}
+
+.three-panel-board {
+    margin-top: 15px;
+    margin-bottom: 60px;
+    justify-content: space-between;
+}
+
+.three-panel-board img {
+    width: 265px; 
+    height: 200px;
+}
+
+.nav-linked-gifs-container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-linked-gifs-container img {
+    width: 265px;
+    height: 265px;
+    margin-bottom: 5px;
+}

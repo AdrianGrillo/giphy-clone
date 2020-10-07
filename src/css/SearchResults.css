@@ -1,0 +1,98 @@
+/* <---- Header -----> */
+
+
+
+
+
+.search-header {
+    position: relative;
+    bottom: 30px;
+    align-items: baseline;
+    color: white;
+}
+
+.search-header li {
+    padding-right: 5px;
+}
+
+.search-header:first-child {
+    font-size: 20px;
+}
+
+.search-header li:nth-child(2) {
+    font-size: 17px;
+    letter-spacing: -.6px;
+    color: lightgrey;
+    opacity: .6;
+}
+
+.selector-container {
+    position: relative;
+    bottom: 65px;
+}
+
+.content-selector {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    height: 28px;
+    width: 100px;
+    border-right: solid 3px black;
+    background: rgb(47, 47, 47);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+
+
+
+/* <----- Search Results -----> */
+
+
+
+
+
+.gif-container {
+    position: relative;
+    bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.gif-container img {
+    width: 333px;
+    height: 300px;
+    padding: 0 6px 11px 0;
+}
+
+
+
+
+
+/* <----- Stickers -----> */
+
+
+
+
+
+.stickers img {
+    padding: 0 6px 6px 0;
+    height: 300px;
+    width: 331px;
+    margin-bottom: 10px;
+}
+
+.stickers-background {
+    background-image: 
+    linear-gradient(to right, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.2)),
+    linear-gradient(to right, black 50%, rgb(18, 18, 18) 50%),
+    linear-gradient(to bottom, black 50%, rgb(18, 18, 18) 50%);
+    background-blend-mode: normal, difference, normal;
+    background-size: 2em 2em;
+
+}
