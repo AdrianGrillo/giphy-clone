@@ -15,6 +15,7 @@ export default function SearchBar() {
         setInput(e.target.value)
     }
 
+    // Alternate the searchbar placeholder every 2.8 seconds
     React.useEffect(() => {
         const id = window.setInterval(() => placeholderText === 'Search all the GIFs and Stickers' 
             ? setPlaceholderText('@username + tag to search within a verified channel') 
@@ -34,8 +35,10 @@ export default function SearchBar() {
                     value={input}
                     onChange={(e) => updateInput(e)}
                 /> 
-                <Link to={input.length > 0 ? `/search=${input}` : '/'} >
-                    <button className='search-btn'>
+
+                {/* If theres no query in the searchbar when the user presses enter, take them back to the home page */}
+                <Link to={input.length > 0 ? `/search=gifs+${input}` : '/'} >
+                    <button className='pointer search-btn'>
                         <MdSearch color='white' style={searchIconStyle} />
                     </button>
                 </Link>
