@@ -4,7 +4,7 @@ import SmallSearchBar from '../search-components/SmallSearchBar'
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 export default function Sidebar ({ img, tagline, placeholder }) {
-    const trendingSearches = ['ReactJS', 'shipit', 'giphy-clone', 'I <3 tampa', 'USF', 'stack overflow', 'github']
+    const trendingSearches = ['ReactJS', 'shipIt', 'hireMe', 'giphyClone', 'USF', 'stackOverflow', 'gitHub']
 
     return (
         <div className='sidebar-container'>
