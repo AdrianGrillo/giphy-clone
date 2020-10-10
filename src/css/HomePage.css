@@ -274,7 +274,7 @@ code {
 
 
 
-.artists-container {
+.coding-gifs-container {
   height: 300px;
   margin-top: 25px;
 }
@@ -340,17 +340,17 @@ code {
   height: 1500px;
 }
 
+.zoom-container {
+  height: 300px;
+  width: 342px;
+  overflow: hidden;
+}
+
 .random-gifs {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 
-}
-
-.zoom-container {
-  height: 300px;
-  width: 342px;
-  overflow: hidden;
 }
 
 .random-gifs img {

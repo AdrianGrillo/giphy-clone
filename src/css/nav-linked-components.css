@@ -6,7 +6,6 @@
 
 .sidebar-container {
     width: 208px;
-    /* background: red; */
     margin-top: 30px;
     color: lightgrey;
     opacity: .7;
@@ -19,8 +18,6 @@
 
 .tagline {
     font-size: 13px;
-    /* color: lightgrey;
-    opacity: .7; */
     font-weight: 400;
 }
 
@@ -95,13 +92,8 @@
 
 
 .offset-container {
-    position: relative;
-    height: 1px;
-    left: 220px;
-    bottom: 730px;
-    width: 820px;
     color: white;
-    background: red;
+    margin-left: 20px;
 }
 
 .nav-linked-stickers-container {
