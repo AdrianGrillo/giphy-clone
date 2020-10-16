@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../css/search-results.css'
+import '../../scss/search-results.scss'
 import useAxios from '../../hooks/useAxios'
 import { NavLink } from 'react-router-dom'
 import Loading from '../Loading'
@@ -59,11 +59,11 @@ function StickerSearchResults({ location }) {
     }
 
     return (
-        <div className='gif-container stickers stickers-background'>
+        <div className='gif-container stickers-background'>
             {gifs.data.map(gif => {
                 return (
                     <li key={gif.id}>
-                        <img src={gif.images.fixed_height.url} alt='search result gif'></img>
+                        <img  classname='search-result-sticker' src={gif.images.fixed_height.url} alt='search result gif'></img>
                     </li>
                 )
             })}
@@ -84,8 +84,8 @@ export default function SearchResults({ location }) {
     const navLinks = ['GIFs', 'Stickers']
 
     return (
-        <div>
-            <ul className='search-header row'>
+        <>
+            <ul className='row search-header'>
                 <li>
                     <h1>{query}</h1>
                 </li>
@@ -116,7 +116,7 @@ export default function SearchResults({ location }) {
                 : <StickerSearchResults location={location} />
             }
 
-        </div>
+        </>
     )
 }
 

@@ -26,23 +26,21 @@ export default function SearchBar() {
     })
 
     return (
-        <div>
-            <form className='row'>
-                <input 
-                    className='search-bar'
-                    placeholder={placeholderText}
-                    type='text'
-                    value={input}
-                    onChange={(e) => updateInput(e)}
-                /> 
+        <form className='row'>
+            <input 
+                className='search-bar'
+                placeholder={placeholderText}
+                type='text'
+                value={input}
+                onChange={(e) => updateInput(e)}
+            /> 
 
-                {/* If theres no query in the searchbar when the user presses enter, take them back to the home page */}
-                <Link to={input.length > 0 ? `/search=gifs+${input}` : '/'} >
-                    <button className='pointer search-btn'>
-                        <MdSearch color='white' style={searchIconStyle} />
-                    </button>
-                </Link>
-            </form>
-        </div>
+            {/* If theres no query in the searchbar when the user presses enter, take them back to the home page */}
+            <Link to={input.length > 0 ? `/search=gifs+${input}` : '/'} >
+                <button className='pointer search-btn'>
+                    <MdSearch color='white' style={searchIconStyle} />
+                </button>
+            </Link>
+        </form>
     )
 }
