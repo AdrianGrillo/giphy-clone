@@ -1,0 +1,132 @@
+@import './mixins.scss';
+
+/* <----- SideBar -----> */
+
+
+
+
+
+.sidebar-container {
+    width: 208px;
+    margin-top: 30px;
+    color: lightgrey;
+    opacity: .7;
+    img {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+.tagline {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.social-links-container {
+    @include flexCenter(space-between);
+    width: 100px;
+    a {
+        color: #b500d1;
+    }
+}
+
+.small-searchbar-container {
+    margin-top: 15px;
+    height: 40px;
+    padding-bottom: 15px;
+    input {
+        height: 27px;
+        border: solid 2px rgb(80, 80, 80);
+        background: rgb(18, 18, 18);
+        color: white;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            height: 100%;
+        }
+    }
+    button {
+        position: relative;
+        top: 5px;
+        right: 5px;
+        border: solid 2px rgb(80, 80, 80);
+        background: rgb(80, 80, 80);
+    }
+}
+
+.trending-text {
+    color: white;
+    padding-bottom: 15px;
+    font-weight: 400;
+}
+
+
+
+
+
+/* <----- Header -----> */
+
+
+
+
+
+.handle {
+    bottom: 13px;
+    color: lightgrey;
+    opacity: .7;
+}
+
+
+
+
+
+/* <----- Main Container -----> */
+
+
+
+
+
+.offset-container {
+    color: white;
+    margin-left: 20px;
+}
+
+.nav-linked-stickers-container {
+    @include flexCenter(space-between);
+    margin-top: 15px;
+}
+
+.nav-linked-sticker {
+    height: 200px;
+    width: 200px;
+    img {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+.featured-gifs {
+    margin-top: 60px;
+}
+
+.three-panel-board {
+    @include flexCenter(space-between);
+    margin-top: 15px;
+    margin-bottom: 60px;
+    img {
+        width: 265px; 
+        height: 200px;
+    }
+}
+
+.nav-linked-gifs-container {
+    @include flexCenter(space-between);
+    flex-wrap: wrap;
+    flex-direction: row;
+    img {
+        width: 265px;
+        height: 265px;
+        margin-bottom: 5px;
+    }
+}
