@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+// Have to import scss file here or else some styles won't load until after visiting SearchResults page due to code splitting
+import '../scss/search-results.scss'
+
 export default function Card({ gif, gifId, alt, className, width }) {
     const cardStyles = {
         boxShadow: {

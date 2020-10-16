@@ -18,19 +18,19 @@ export default function Nav() {
     }
 
     return (
-        <div>
-            <nav className='flex nav-container'>
+        <>
+            <nav className='nav-container'>
                 
                 <Link to='/'><img style={styles.logo} src='https://i.ibb.co/z5csKC6/giphy-logo.png' alt='GIPHY logo' /></Link>
                 
                 <ul className='row'>
-
                     {navLinks.map((link, index) => {
                         return (
                             <li key={index}>
                                 <Link
+                                    // Set the URL path to whatever the text of the link is
                                     to={`/${link}`}
-                                    className='nav-link nav-link-hover'
+                                    className='nav-link'
                                 >
                                     {link}
                                 </Link>
@@ -54,18 +54,18 @@ export default function Nav() {
                 </ul>
                 
                 <ul className='row'>
-                <Link className='relative nav-link login-nav-link' to='/Login'>
-                    <li className='flex relative user-icon-container'>
-                        <FaUserAlt color='white' />
-                    </li>
-                    <li style={styles.loginText}>
-                        Log In
-                    </li>
-                </Link>
+                    <Link className='relative nav-link login-nav-link' to='/Login'>
+                        <li className='relative'>
+                            <FaUserAlt color='white' />
+                        </li>
+                        <li style={styles.loginText}>
+                            Log In
+                        </li>
+                    </Link>
                 </ul>
             </nav>
 
             <SearchBar />
-        </div>
+        </>
     )
 }
