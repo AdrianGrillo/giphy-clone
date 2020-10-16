@@ -3,7 +3,7 @@ import MdTrendingUp from 'react-ionicons/lib/MdTrendingUp'
 import { FaBolt, FaTelegramPlane, FaDice } from 'react-icons/fa'
 import useAxios from '../../hooks/useAxios'
 import HorizontalScroll from './HorizontalScroll'
-import Card from '../Card.js'
+import Card from '../Card'
 import Loading from '../Loading'
 
 const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
@@ -126,7 +126,7 @@ function Random() {
                 href='Random GIFs'
             />  
 
-            <div className='flex random-gifs'>
+            <div className='random-gifs'>
                 {gifs.data.map(gif => {
                     return (
                         <Card 

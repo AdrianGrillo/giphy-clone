@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 export default function HorizontalScroll({ icon, title, href, gifs, type, styles }) {
     return (
         <div>
-            <div className='flex gif-container-header'>
+            <div className='gif-container-header'>
                 <div>
                     {icon}
                     <span className='relative gif-header-text'>{title}</span>
