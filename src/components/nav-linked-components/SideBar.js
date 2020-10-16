@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../css/nav-linked-components.css'
+import '../../scss/nav-linked-components.scss'
 import SmallSearchBar from '../search-components/SmallSearchBar'
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
 import PropTypes from 'prop-types'
@@ -13,7 +13,7 @@ export default function Sidebar ({ img, tagline, placeholder }) {
             <p className='relative tagline'>{tagline}</p>
 
             <p>Follow on:</p>
-            <div className='relative flex social-links-container'>
+            <div className='relative social-links-container'>
                 <a href='http://www.facebook.com'><FaFacebookF /></a>
                 <a href='http://www.twitter.com'><FaTwitter /></a>
                 <a href='http://www.instagram.com'><FaInstagram /></a>

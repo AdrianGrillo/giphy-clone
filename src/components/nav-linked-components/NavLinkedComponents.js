@@ -1,5 +1,4 @@
 import React from 'react'
-// import SideBar from './SideBar'
 import useAxios from '../../hooks/useAxios'
 import { Link } from 'react-router-dom'
 import { FaChevronRight } from 'react-icons/fa'
@@ -20,7 +19,7 @@ export function Header({ header }) {
         marginLeft: '5px',
         marginBottom: '-2px'
     }
-    
+
     return (
         <div>
             <h1>{header}</h1>
@@ -59,7 +58,8 @@ export function FourPanelStickers({ headerLink, query }) {
                 <FaChevronRight className='relative gifs-header-chevron'/>
             </Link>
 
-            <div className='row flex nav-linked-stickers-container'>
+            <div className='nav-linked-stickers-container'>
+                {/* Render each sticker returned from the API as a Card component */}
                 {stickers.data.map((sticker, index) => {
                     return (
                         <Card
@@ -102,11 +102,11 @@ export function ThreePanelImageBoard({ alt, headerLink, query }) {
         <div className='featured-gifs'>
 
             <Link to='#' className='gifs-header-link'>
-                    {headerLink}
-                    <FaChevronRight className='relative gifs-header-chevron'/>
-                </Link>
+                {headerLink}
+                <FaChevronRight className='relative gifs-header-chevron'/>
+            </Link>
 
-            <div className='row flex three-panel-board'>
+            <div className='three-panel-board'>
                 {gifs.data.map(gif => {
                     return (
                         <li key={gif.id}>
@@ -130,7 +130,7 @@ export function AllTheGifs({ header, gifs }) {
         <div>
             <h1>{`All The ${header}`}</h1>
 
-            <div className='row nav-linked-gifs-container'>
+            <div className='nav-linked-gifs-container'>
                 {gifs.data.slice(4).map(gif => {
                     return (
                         <li key={gif.id}>

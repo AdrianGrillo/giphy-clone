@@ -8,8 +8,8 @@ const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
 // Each Nav page is in the order the appear in on the nav bar from left to right
 
-// Each NavPage component renders child components from NavLinkedComponents.js with certain prop values changed, this pattern
-// repeats in each NavPage component being rendered with slight differences
+// Each NavPage component renders child components from NavLinkedComponents.js with certain prop values changed. This pattern
+// repeats in each NavPage component being rendered with slight differences in the values passed to them
 
 function ReactionsPage() {
     const {loading, error, data: gifs} = useAxios(
@@ -182,7 +182,7 @@ function StickersPage() {
                 <div>
                     <h1>All The Stickers</h1>
 
-                    <div className='row nav-linked-gifs-container stickers-background'>
+                    <div className='nav-linked-gifs-container stickers-background'>
                         {stickers.data.slice(4).map(sticker => {
                             return (
                                 <li key={sticker.id}>
@@ -226,7 +226,7 @@ function About() {
                 <h4>
                     •Full component tree available in the repository README <br /><br />
                     •All custom CSS (No Bootstrap or Styled Components) <br /><br />
-                    •Custom CSS loader
+                    •Code Splitting
                 </h4>
 
                 <hr color='grey' />
@@ -241,7 +241,7 @@ export default function NavLinkedPage({ location }) {
     const path = location.pathname
 
     return (
-        <div>
+        <>
             {/* Render whichever component matches the URL's current path. */}
             {
             path === '/Reactions' ? <ReactionsPage /> 
@@ -250,6 +250,6 @@ export default function NavLinkedPage({ location }) {
                 : path === '/Stickers' ? <StickersPage />
                 : <About />
             }
-        </div>
+        </>
     )
 }
