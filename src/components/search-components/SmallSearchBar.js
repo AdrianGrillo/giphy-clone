@@ -12,7 +12,7 @@ export default function SmallSearchBar({ placeholder }) {
     return (
         <form className='small-searchbar-container'>
             <input 
-                placeholder={`Search ${placeholder} GIFs`}
+                placeholder={`Search ${placeholder}`}
                 className='small-search-bar' 
                 type='text'
                 value={input}

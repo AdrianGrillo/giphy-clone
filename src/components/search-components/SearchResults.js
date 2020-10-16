@@ -1,7 +1,9 @@
 import React from 'react'
-import '../../css/SearchResults.css'
+import '../../css/search-results.css'
 import useAxios from '../../hooks/useAxios'
 import { NavLink } from 'react-router-dom'
+import Loading from '../Loading'
+import PropTypes from 'prop-types'
 
 const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
@@ -17,11 +19,11 @@ function GifSearchResults({ location }) {
     )
 
     if(loading) {
-        return <h1>Loading...</h1>
+        return <Loading />
     }
 
     if(error) {
-        return <h1>Error</h1>
+        return <h1 className='error'>Error</h1>
     }
 
     return (
@@ -37,6 +39,10 @@ function GifSearchResults({ location }) {
     )
 }
 
+GifSearchResults.propTypes = {
+    location: PropTypes.string.isRequired
+}
+
 function StickerSearchResults({ location }) {
     const query = location.pathname.split('+')[1]
 
@@ -45,11 +51,11 @@ function StickerSearchResults({ location }) {
     )
 
     if(loading) {
-        return <h1>Loading...</h1>
+        return <Loading />
     }
 
     if(error) {
-        return <h1>Error</h1>
+        return <h1 className='error'>Error</h1>
     }
 
     return (
@@ -63,6 +69,10 @@ function StickerSearchResults({ location }) {
             })}
         </div>
     )
+}
+
+StickerSearchResults.propTypes = {
+    location: PropTypes.string.isRequired
 }
 
 export default function SearchResults({ location }) {
@@ -86,9 +96,10 @@ export default function SearchResults({ location }) {
             </ul>
 
             <div className='row selector-container'>
-                {navLinks.map(link => {
+                {navLinks.map((link, index) => {
                     return (
                         <NavLink
+                            key={index}
                             to={`/search=${link.toLowerCase()}+${query}`}
                             className='content-selector'
                             activeStyle={activeStyle}
@@ -107,4 +118,8 @@ export default function SearchResults({ location }) {
 
         </div>
     )
+}
+
+SearchResults.propTypes = {
+    location: PropTypes.string.isRequired
 }
