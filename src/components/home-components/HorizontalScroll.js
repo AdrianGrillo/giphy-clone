@@ -6,18 +6,19 @@ import PropTypes from 'prop-types'
 export default function HorizontalScroll({ icon, title, href, gifs, type, styles }) {
     return (
         <div>
-            <div className='gif-container-header'>
+            <div className='flex gif-container-header'>
                 <div>
                     {icon}
-                    <span className='gif-header-text'>{title}</span>
+                    <span className='relative gif-header-text'>{title}</span>
                 </div>
                 <div>
                     <Link to='#' className='gifs-header-link'>All {href}
-                    <FaChevronRight className='gifs-header-chevron' /></Link>
+                    <FaChevronRight className='relative gifs-header-chevron' /></Link>
                 </div>
             </div>
 
-            {gifs && <div className={`gif-scroll ${type}-scroll`}>
+            {/* If gifs are provided to this component then render the horizontal scroll bar, else render only the header  */}
+            {gifs && <div className={`flex relative gif-scroll ${type}-scroll`}>
                 <ul className='row'>
                     {gifs.data.map(gif => {
                         return (
@@ -26,7 +27,7 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
                                     className='gifs-to-scroll' 
                                     style={styles}
                                     src={gif.images.fixed_height.url} 
-                                    alt='{type}'>
+                                    alt='{type} GIF'>
                                 </img>
                             </li>
                         )

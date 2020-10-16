@@ -4,6 +4,7 @@ import { FaBolt, FaTelegramPlane, FaDice } from 'react-icons/fa'
 import useAxios from '../../hooks/useAxios'
 import HorizontalScroll from './HorizontalScroll'
 import Card from '../Card.js'
+import Loading from '../Loading'
 
 const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
@@ -13,11 +14,11 @@ function Trending() {
     )
 
     if(loading) {
-        return <p>Loading</p>
+        return <Loading />
     }
 
     if(error) {
-        return <h1 className='error'>{error}</h1>
+        return <h1 className='error'>Error</h1>
     }
 
     return (
@@ -36,31 +37,31 @@ function Trending() {
     )
 }
 
-function Artists() {
+function CodingGifs() {
     const { loading, data: gifs, error } = useAxios (
-        `https://api.giphy.com/v1/gifs/search?api_key=${api}&q=art&limit=25&offset=8&rating=g&lang=en` 
+        `https://api.giphy.com/v1/gifs/search?api_key=${api}&q=coding&limit=25&offset=0&rating=g&lang=en` 
     )
     
-    /* No API section dedicated to artists and GIPHY API search for multiple IDs at once function not working currently, so here 
-    we're searching for 'art' gifs and returning the results */
+    // On the GIPHY site this section is titled 'Artists' but their API doesn't offer gifs of this type, so instead we're
+    // populating this section with coding gifs
 
     if(loading) {
-        return <p>Loading</p>
+        return <Loading />
     }
 
     if(error) {
-        return <h1 className='error'>{error}</h1>
+        return <h1 className='error'>Error</h1>
     }
 
     return (
-        <div className='artists-container'>
+        <div className='coding-gifs-container'>
 
             <HorizontalScroll
                 icon={<FaBolt className='gif-header-icon' color='#992762' />}
-                title='Artists'
-                href='GIPHY Artists'
+                title='Coding GIFs'
+                href='Coding GIFs'
                 gifs={gifs}
-                type='artists'
+                type='coding GIFs'
                 styles={{height: '250px', width: '400px'}}
             />
 
@@ -68,7 +69,7 @@ function Artists() {
     )
 }
 
-function Stickers() {
+function TrendingStickers() {
     const { loading, data: gifs, error } = useAxios(
         `https://api.giphy.com/v1/stickers/trending?api_key=${api}&limit=25&rating=g`
     )
@@ -77,11 +78,11 @@ function Stickers() {
     background by default we've added a keyframes gradient to the scrolling container */
 
     if(loading) {
-        return <p>Loading</p>
+        return <Loading />
     }
 
     if(error) {
-        return <h1 className='error'>{error}</h1>
+        return <h1 className='error'>Error</h1>
     }
 
     return (
@@ -109,11 +110,11 @@ function Random() {
     the results instead of making 24 different API calls everytime the page loads more GIFs */
 
     if(loading) {
-        return <div>Loading...</div>
+        return <Loading />
     }
 
     if(error) {
-        return <div className='error'>{error}</div>
+        return <div className='error'>Error</div>
     }
 
     return (
@@ -125,13 +126,16 @@ function Random() {
                 href='Random GIFs'
             />  
 
-            <div className='random-gifs'>
+            <div className='flex random-gifs'>
                 {gifs.data.map(gif => {
                     return (
                         <Card 
-                            key={gif.id} 
+                            key={gif.id}
                             gif={gif.images.fixed_height.url} 
                             gifId={gif.id} 
+                            alt='Random GIF'
+                            className='zoom-container'
+                            width={342}
                         />
                     )
                 })}     
@@ -145,8 +149,8 @@ export default function HomeComponents() {
     return (
         <div>
             <Trending />
-            <Artists />
-            <Stickers />
+            <CodingGifs />
+            <TrendingStickers />
             <Random />
         </div>
     )
