@@ -9,12 +9,9 @@
       content="Web site created using create-react-app"
     />
 
-    <% if (htmlWebpackPlugin.options.nodeModules) { %>
-      <!-- Add `node_modules/` to global paths so `require` works properly in development -->
       <script>
         require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
       </script>
-    <% } %>
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
