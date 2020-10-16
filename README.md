@@ -6,8 +6,8 @@ This Giphy Clone was built using React Hooks, GIPHY API, and SASS. This applicat
 
 ### Component Tree
 
-Link: 
+Link: [Component Tree](https://app.diagrams.net/#G13BROVWobErLl29by_B5SP98B3y4Zh0BG)
 
 Preview: 
 
-![Component Tree Preview]()
+![Component Tree Preview](https://i.ibb.co/BG9QW5g/Screenshot-5.png)
