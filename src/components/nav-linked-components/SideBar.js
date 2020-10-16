@@ -2,6 +2,7 @@ import React from 'react'
 import '../../css/nav-linked-components.css'
 import SmallSearchBar from '../search-components/SmallSearchBar'
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
+import PropTypes from 'prop-types'
 
 export default function Sidebar ({ img, tagline, placeholder }) {
     const trendingSearches = ['ReactJS', 'shipIt', 'hireMe', 'giphyClone', 'USF', 'stackOverflow', 'gitHub']
@@ -35,4 +36,10 @@ export default function Sidebar ({ img, tagline, placeholder }) {
             <hr color='grey' />
         </div>
     )
+}
+
+Sidebar.propTypes = {
+    img: PropTypes.string.isRequired,
+    tagline: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired
 }

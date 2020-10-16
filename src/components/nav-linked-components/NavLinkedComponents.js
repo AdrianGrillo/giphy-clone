@@ -4,34 +4,52 @@ import useAxios from '../../hooks/useAxios'
 import { Link } from 'react-router-dom'
 import { FaChevronRight } from 'react-icons/fa'
 import Card from '../Card'
+import Loading from '../Loading'
+import PropTypes from 'prop-types'
+import { GoVerified } from 'react-icons/go'
 
 const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
 // Components for pages linked in the nav are laid out in order as the appear on each page
 
 export function Header({ header }) {
+    const verifiedIconStyles = {
+        height: '15px',
+        width: '15px',
+        color: '#42A5F5',
+        marginLeft: '5px',
+        marginBottom: '-2px'
+    }
+    
     return (
         <div>
             <h1>{header}</h1>
-            <p className='relative handle'>@{header.toLowerCase().split(' ')}</p>
+            <h5 className='relative handle'>
+                @{header.toLowerCase().split(' ')}
+                <GoVerified style={verifiedIconStyles} />
+            </h5>
         </div>
     )
 }
 
+Header.propTypes = {
+    header: PropTypes.string.isRequired
+}
+
 export function FourPanelStickers({ headerLink, query }) {
 
-    // Since the earch query changes depending on what page is being displayed, the query is passed from the parent
-    // component as a prop so that this component can be reused for every nav page
+    // Since the search query changes depending on what page is being displayed, the query is passed from the parent
+    // component as a prop so that this component can be reused for each nav page
     const {loading, error, data: stickers} = useAxios(
         `https://api.giphy.com/v1/stickers/search?api_key=${api}&q=${query}&limit=4&offset=0&rating=g&lang=en`
     )
 
     if(loading) {
-        return <div>Loading...</div>
+        return <Loading />
     }
 
     if(error) {
-        return <div>Error</div>
+        return <div className='error'>Error</div>
     }
 
     return (
@@ -59,6 +77,11 @@ export function FourPanelStickers({ headerLink, query }) {
     )
 }
 
+FourPanelStickers.propTypes = {
+    headerLink: PropTypes.string.isRequired,
+    query: PropTypes.string.isRequired
+}
+
 export function ThreePanelImageBoard({ alt, headerLink, query }) {
     // Since this component is being used for multiple categories, we pass each category as a query for the search to
     //avoid making multiple API calls inside of a single component
@@ -68,11 +91,11 @@ export function ThreePanelImageBoard({ alt, headerLink, query }) {
     )
 
     if(loading) {
-        return <div>Loading...</div>
+        return <Loading />
     }
 
     if(error) {
-        return <div>Error</div>
+        return <div className='error'>Error</div>
     }
 
     return (
@@ -96,6 +119,12 @@ export function ThreePanelImageBoard({ alt, headerLink, query }) {
     )
 }
 
+ThreePanelImageBoard.propTypes = {
+    headerLink: PropTypes.string.isRequired,
+    query: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired
+}
+
 export function AllTheGifs({ header, gifs }) {
     return (
         <div>
@@ -112,4 +141,9 @@ export function AllTheGifs({ header, gifs }) {
             </div>
         </div>
     )
+}
+
+AllTheGifs.propTypes = {
+    header: PropTypes.string.isRequired,
+    gifs: PropTypes.object.isRequired
 }

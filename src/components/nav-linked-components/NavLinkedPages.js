@@ -2,6 +2,7 @@ import React from 'react'
 import SideBar from './SideBar'
 import useAxios from '../../hooks/useAxios'
 import { Header, FourPanelStickers, ThreePanelImageBoard, AllTheGifs } from './NavLinkedComponents'
+import Loading from '../Loading'
 
 const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
@@ -16,11 +17,11 @@ function ReactionsPage() {
     )
 
     if(loading) {
-        return <div>Loading...</div>
+        return <Loading />
     }
 
     if(error) {
-        return <div>Error...</div>
+        return <div className='error'>Error...</div>
     }
 
     return (
@@ -61,11 +62,11 @@ function EntertainmentPage() {
     )
 
     if(loading) {
-        return <div>Loading...</div>
+        return <Loading />
     }
 
     if(error) {
-        return <div>Error...</div>
+        return <div className='error'>Error...</div>
     }
 
     return (
@@ -99,11 +100,11 @@ function SportsPage() {
     )
 
     if(loading) {
-        return <div>Loading...</div>
+        return <Loading />
     }
 
     if(error) {
-        return <div>Error...</div>
+        return <div className='error'>Error...</div>
     }
 
     return (
@@ -149,11 +150,11 @@ function StickersPage() {
     )
 
     if(loading) {
-        return <div>Loading...</div>
+        return <Loading />
     }
 
     if(error) {
-        return <div>Error</div>
+        return <div className='error'>Error</div>
     }
 
     return (
@@ -212,22 +213,21 @@ function About() {
                 <h3>Functionality includes:</h3>
 
                 <h4>
-                    •Successful integration of a third party API into a web page.<br /><br />
-                    •Utilization of a CSS preprocessor to add responsive design elements.<br /><br />
-                    •Full searchbar functionality.<br /><br />
-                    •Reusable React components.
+                    •Successful integration of a third party API into a web page <br /><br />
+                    •Utilization of SASS to add responsive design elements <br /><br />
+                    •Full searchbar functionality <br /><br />
+                    •Reusable React components
                 </h4>
 
                 <hr color='grey' />
 
                 <h3>Other Cool Things:</h3>
 
-                <h5>
-                    •Full component tree available in the repository README.<br /><br />
-                    •Custom CSS loader <br /><br />
-                    •Buttons to scroll horizontal containers. <br /><br />
-                    •Tooltip hover component.
-                </h5>
+                <h4>
+                    •Full component tree available in the repository README <br /><br />
+                    •All custom CSS (No Bootstrap or Styled Components) <br /><br />
+                    •Custom CSS loader
+                </h4>
 
                 <hr color='grey' />
 
@@ -242,6 +242,7 @@ export default function NavLinkedPage({ location }) {
 
     return (
         <div>
+            {/* Render whichever component matches the URL's current path. */}
             {
             path === '/Reactions' ? <ReactionsPage /> 
                 : path === '/Entertainment' ? <EntertainmentPage /> 
