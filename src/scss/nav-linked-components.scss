@@ -33,13 +33,11 @@
 .small-searchbar-container {
     margin-top: 15px;
     height: 20px;
-    // width: 80%;
     padding-bottom: 15px;
     background-color: red;
     display: flex;
     justify-content: space-between;
     input {
-        // height: 27px;
         height: 150%;
         width: 80%;
         border: solid 2px rgb(80, 80, 80);
@@ -53,9 +51,7 @@
         }
     }
     button {
-        // position: relative;
-        // top: 5px;
-        // right: 10px;
+
         height: 180%;
         width: 100%;
         border: solid 2px rgb(80, 80, 80);
