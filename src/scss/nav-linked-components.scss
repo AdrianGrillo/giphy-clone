@@ -36,6 +36,7 @@
     padding-bottom: 15px;
     input {
         height: 27px;
+        width: 60%;
         border: solid 2px rgb(80, 80, 80);
         background: rgb(18, 18, 18);
         color: white;
@@ -49,7 +50,7 @@
     button {
         position: relative;
         top: 5px;
-        right: 5px;
+        right: 10px;
         border: solid 2px rgb(80, 80, 80);
         background: rgb(80, 80, 80);
     }
