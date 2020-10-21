@@ -9,13 +9,17 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
         height: '30px'
     }
 
-    const scrollContainer = React.useRef(null)
+    const scrollContainer = React.useRef()
 
-    const scrollLeft = () => {
+    const scrollLeft = (e) => {
+        e.preventDefault()
+
         scrollContainer.current.scrollLeft -= 800;
     }
 
-    const scrollRight = () => {
+    const scrollRight = (e) => {
+        e.preventDefault()
+
         scrollContainer.current.scrollLeft += 800;
     }
 
@@ -37,11 +41,11 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
             {gifs && 
                 <>
                     <div className={`relative horizontal-${type}-container`}>
-                        <button onClick={() => scrollLeft()} className='scroll-btn'>
+                        <button onClick={(e) => scrollLeft(e)} className='scroll-btn'>
                             <FaChevronLeft className='scroll-chevron' style={chevronStyles} />
                         </button>
 
-                        <button onClick={() => scrollRight()} className='scroll-btn'>
+                        <button onClick={(e) => scrollRight(e)} className='scroll-btn'>
                             <FaChevronRight className='scroll-chevron' style={chevronStyles} />
                         </button>
                     </div>
