@@ -3,3 +3,18 @@
     justify-content: $justify;
     align-items: center;
   }
+
+@mixin scrollButtonContainer($height) {
+  position: absolute;
+  @include flexCenter(space-between);
+  width: 1040px;
+  margin-top: 6px;
+  height: $height;
+  button {
+    z-index: 999;
+    height: 100%;
+    margin: 0;
+    width: 50px;
+    border: none;
+  }
+}

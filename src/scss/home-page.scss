@@ -211,8 +211,8 @@ html, body, #app {
 
 .gif-scroll {
   bottom: 10px;
-  overflow: auto;
   overflow-y: hidden;
+  overflow-x: scroll;
   scroll-behavior: smooth;
   &::-webkit-scrollbar { 
     display: none;
@@ -228,6 +228,40 @@ html, body, #app {
 
 
 
+/* <----- Horizontal Scroll Container Button Overlay -----> */
+
+
+
+
+
+.horizontal-trending-container {
+  @include scrollButtonContainer(145px);
+}
+
+.horizontal-coding-gifs-container {
+  @include scrollButtonContainer(250px);
+}
+
+.horizontal-stickers-container {
+  @include scrollButtonContainer(496px);
+}
+
+.scroll-btn {
+  background: rgba(18, 18, 18, 0);
+}
+
+.scroll-chevron {
+  color: lightgrey;
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
 /* <----- Trending -----> */
 
 
@@ -235,9 +269,13 @@ html, body, #app {
 
 
 .trending-container {
-  height: 200px;
+  height: 180px;
   margin-top: 33px;
 }
+
+// .trending-scroll {
+//   height: 145px;
+// }
 
 
 
@@ -251,7 +289,7 @@ html, body, #app {
 
 .coding-gifs-container {
   height: 300px;
-  margin-top: 25px;
+  margin-top: 45px;
 }
 
 
