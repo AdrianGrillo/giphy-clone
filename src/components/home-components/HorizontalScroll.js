@@ -9,6 +9,7 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
         height: '30px'
     }
 
+    // Referencing the container we want to scroll with the buttons
     const scrollContainer = React.useRef()
 
     const scrollLeft = () => {
@@ -20,7 +21,7 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
     }
 
     return (
-        <>
+        <div>
             <div className='gif-container-header'>
                 <div>
                     {icon}
@@ -64,7 +65,7 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
                     </div> 
                 </>
             }
-        </>
+        </div>
     )
 }
 
