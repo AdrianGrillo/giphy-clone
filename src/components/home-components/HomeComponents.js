@@ -61,7 +61,7 @@ function CodingGifs() {
                 title='Coding GIFs'
                 href='Coding GIFs'
                 gifs={gifs}
-                type='coding GIFs'
+                type='coding-gifs'
                 styles={{height: '250px', width: '400px'}}
             />
 
