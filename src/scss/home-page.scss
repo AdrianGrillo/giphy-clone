@@ -179,6 +179,7 @@ html, body, #app {
 /* Default styles for the containers on the home page, anything else is changed as needed */
 
 .gif-container-header {
+  @include container;
   @include flexCenter(space-between);
   height: 40px;
 }
@@ -210,6 +211,7 @@ html, body, #app {
 }
 
 .gif-scroll {
+  @include container;
   bottom: 10px;
   overflow-y: hidden;
   overflow-x: scroll;
@@ -235,15 +237,16 @@ html, body, #app {
 
 
 .horizontal-trending-container {
-  @include scrollButtonContainer(145px);
+  @include scrollButtonContainer(145px, 1040px);
+
 }
 
 .horizontal-coding-gifs-container {
-  @include scrollButtonContainer(250px);
+  @include scrollButtonContainer(250px, 1040px);
 }
 
 .horizontal-stickers-container {
-  @include scrollButtonContainer(496px);
+  @include scrollButtonContainer(496px, 1040px);
 }
 
 .scroll-btn {
@@ -275,10 +278,6 @@ html, body, #app {
   height: 180px;
   margin-top: 33px;
 }
-
-// .trending-scroll {
-//   height: 145px;
-// }
 
 
 

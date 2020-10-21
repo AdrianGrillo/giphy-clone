@@ -1,17 +1,24 @@
+@mixin container {
+  @include flexCenter(center);
+  width: 100%;
+  z-index: 99;
+}
+
 @mixin flexCenter($justify) {
     display: flex;
     justify-content: $justify;
     align-items: center;
   }
 
-@mixin scrollButtonContainer($height) {
-  position: absolute;
+@mixin scrollButtonContainer($height, $width) {
+  @include container;
   @include flexCenter(space-between);
-  width: 1040px;
+  position: absolute;
+  max-width: $width;
   margin-top: 6px;
   height: $height;
+  z-index: 999;
   button {
-    z-index: 999;
     height: 100%;
     margin: 0;
     width: 50px;
