@@ -5,10 +5,10 @@
 }
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
 
 @mixin scrollButtonContainer($height, $width) {
   @include container;

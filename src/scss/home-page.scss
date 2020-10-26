@@ -112,6 +112,71 @@ html, body, #app {
 
 
 
+/* <----- Burger Styles and Media Queries -----> */
+
+
+
+
+
+// Only display the burger icon when the screen is less than 1000px wide
+@media screen and (max-width: 1000px) {
+  .nav-container ul {
+    display: none;
+  }
+  nav .burger-container {
+    display: block;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  nav .burger-container {
+    display: none;
+  }
+}
+
+.burger {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.burger-menu {
+  position: absolute;
+  background-image: linear-gradient(-135deg, #bd4faf,#6f31db);
+  z-index: 9999;
+  right: 0;
+  // height: 300px;
+  width: 20%;
+  h2 {
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+}
+
+.burger-link {
+  @include flexCenter(space-around);
+  text-decoration: none;
+  color: white;
+  padding-top: 25px;
+  -webkit-transition: linear .25s;
+  -moz-transition: linear .25s;
+  -o-transition: linear .25s;
+  transition: linear .25s;
+  &:last-child {
+    padding-bottom: 25px;
+  }
+  &:hover {
+    color: black;
+
+  }
+}
+
+
+
+
+
 /* <----- SearchBar -----> */
 
 
@@ -238,7 +303,6 @@ html, body, #app {
 
 .horizontal-trending-container {
   @include scrollButtonContainer(145px, 1040px);
-
 }
 
 .horizontal-coding-gifs-container {
