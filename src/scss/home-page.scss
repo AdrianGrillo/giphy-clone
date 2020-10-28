@@ -306,17 +306,21 @@ html, body, #app {
 
 .horizontal-trending-container {
   @include scrollButtonContainer(145px, 1040px);
+  width: 100%;
 }
 
 .horizontal-coding-gifs-container {
   @include scrollButtonContainer(250px, 1040px);
+  width: 100%;
 }
 
 .horizontal-stickers-container {
   @include scrollButtonContainer(496px, 1040px);
+  width: 100%;
 }
 
 .scroll-btn-left {
+  z-index: 999;
   background: rgba(18, 18, 18, 0);
   &:focus {
     outline: none;
@@ -324,8 +328,7 @@ html, body, #app {
 }
 
 .scroll-btn-right {
-  position: relative;
-  left: 940%;
+  z-index: 999;
   background: rgba(18, 18, 18, 0);
   &:focus {
     outline: none;
