@@ -36,7 +36,7 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
             {/* If gifs are provided to this component then render the horizontal scroll bar, else render only the header  */}
             {/* Container with buttons is transparant and positioned absolutely over scroll container */}
             {gifs && 
-                <div className='container'>
+                <div>
 
                     <div className={`relative horizontal-${type}-container`}>
                         <button onClick={() => scrollLeft()} className='scroll-btn-left'>
