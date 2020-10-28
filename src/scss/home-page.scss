@@ -24,6 +24,10 @@ html, body, #app {
   }
 }
 
+.container {
+  @include container;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -146,7 +150,7 @@ html, body, #app {
   background-image: linear-gradient(-135deg, #bd4faf,#6f31db);
   z-index: 9999;
   right: 0;
-  width: 50%;
+  width: 100%;
   h2 {
     display: flex;
     justify-content: center;
@@ -312,7 +316,16 @@ html, body, #app {
   @include scrollButtonContainer(496px, 1040px);
 }
 
-.scroll-btn {
+.scroll-btn-left {
+  background: rgba(18, 18, 18, 0);
+  &:focus {
+    outline: none;
+  }
+}
+
+.scroll-btn-right {
+  position: absolute;
+  left: 990px;
   background: rgba(18, 18, 18, 0);
   &:focus {
     outline: none;

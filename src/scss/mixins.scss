@@ -1,5 +1,4 @@
 @mixin container {
-  @include flexCenter(center);
   width: 100%;
   z-index: 99;
 }
@@ -11,7 +10,6 @@
 }
 
 @mixin scrollButtonContainer($height, $width) {
-  @include container;
   @include flexCenter(space-between);
   position: absolute;
   max-width: $width;
