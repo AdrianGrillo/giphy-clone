@@ -34,15 +34,16 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
             </div>
 
             {/* If gifs are provided to this component then render the horizontal scroll bar, else render only the header  */}
-            {/* Container with buttons is transparant and posiitoned absolutely over scroll container */}
+            {/* Container with buttons is transparant and positioned absolutely over scroll container */}
             {gifs && 
-                <>
+                <div className='container'>
+
                     <div className={`relative horizontal-${type}-container`}>
-                        <button onClick={() => scrollLeft()} className='scroll-btn'>
+                        <button onClick={() => scrollLeft()} className='scroll-btn-left'>
                             <FaChevronLeft className='scroll-chevron' style={chevronStyles} />
                         </button>
 
-                        <button onClick={() => scrollRight()} className='scroll-btn'>
+                        <button onClick={() => scrollRight()} className='scroll-btn-right'>
                             <FaChevronRight className='scroll-chevron' style={chevronStyles} />
                         </button>
                     </div>
@@ -56,14 +57,15 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
                                             className='gifs-to-scroll' 
                                             style={styles}
                                             src={gif.images.fixed_height.url} 
-                                            alt='{type} GIF'>
+                                            alt={`${type} GIF`}>
                                         </img>
                                     </li>
                                 )
                             })}
                         </ul>
                     </div> 
-                </>
+
+                </div>
             }
         </div>
     )
