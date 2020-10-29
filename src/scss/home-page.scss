@@ -280,6 +280,7 @@ html, body, #app {
 
 .gif-scroll {
   @include container;
+  justify-content: flex-start;
   bottom: 10px;
   overflow-y: hidden;
   overflow-x: scroll;
