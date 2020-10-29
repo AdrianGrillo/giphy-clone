@@ -213,10 +213,10 @@ function About() {
                 <h3>Functionality includes:</h3>
 
                 <h4>
-                    •Successful integration of a third party API into a web page <br /><br />
-                    •Utilization of SASS to add responsive design elements <br /><br />
-                    •Full searchbar functionality <br /><br />
-                    •Reusable React components
+                    • Successful integration of a third party API into a web page <br /><br />
+                    • Utilization of SASS to add responsive design elements <br /><br />
+                    • Full searchbar functionality <br /><br />
+                    • Reusable React components
                 </h4>
 
                 <hr color='grey' />
@@ -224,9 +224,9 @@ function About() {
                 <h3>Other Cool Things:</h3>
 
                 <h4>
-                    •Full component tree available in the repository README <br /><br />
-                    •All custom CSS (No Bootstrap or Styled Components) <br /><br />
-                    •Code Splitting
+                    • Full component tree available in the repository README <br /><br />
+                    • All custom CSS (No Bootstrap or Styled Components) <br /><br />
+                    • Code Splitting
                 </h4>
 
                 <hr color='grey' />
