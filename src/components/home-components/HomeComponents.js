@@ -10,7 +10,7 @@ const api = 'D4NJn0Y2lqBrdx3rzoV7Fm15m0KBDRTI'
 
 function Trending() {
     const { loading, data: gifs, error } = useAxios(
-        `https://api.giphy.com/v1/gifs/trending?api_key=${api}&limit=25&rating=g`
+        `https://api.giphy.com/v1/gifs/trending?api_key=${api}&limit=42&rating=g`
     )
 
     if(loading) {
@@ -30,7 +30,7 @@ function Trending() {
                 href='Trending GIFs'
                 gifs={gifs}
                 type='trending'
-                styles={{height: '145px', width: '200px'}}
+                styles={{height: 145, width: 200}}
             />
 
         </div>
@@ -62,7 +62,7 @@ function CodingGifs() {
                 href='Coding GIFs'
                 gifs={gifs}
                 type='coding-gifs'
-                styles={{height: '250px', width: '400px'}}
+                styles={{height: 250, width: 345}}
             />
 
         </div>
@@ -94,7 +94,7 @@ function TrendingStickers() {
                 href='Trending Stickers'
                 gifs={gifs}
                 type='stickers'
-                styles={{height: '460px', borderRight: 'rgb(18,18,18) solid 3px'}}
+                styles={{height: 460, width: 350, borderRight: 'rgb(18,18,18) solid 3px'}}
             />
 
         </div>

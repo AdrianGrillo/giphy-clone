@@ -10,14 +10,20 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
     }
 
     // Referencing the container we want to scroll with the buttons
-    const scrollContainer = React.useRef()
+    const scrollContainer = React.useRef(0)
+    // This state property dictates whether or not scroll buttons will be shown
+    const [scrollValue, setScrollValue] = React.useState(0)
+    // Max scroll width of the horizontal container
+    const maxScrollLeft = 29 * 250
 
     const scrollLeft = () => {
         scrollContainer.current.scrollLeft -= 800;
+        setScrollValue(scrollValue => scrollValue > 0 ? scrollValue - 800 : 0)
     }
 
     const scrollRight = () => {
         scrollContainer.current.scrollLeft += 800;
+        setScrollValue(scrollValue => scrollValue < maxScrollLeft ? scrollValue + 800 : maxScrollLeft)
     }
 
     return (
@@ -40,11 +46,17 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
 
                     <div className={`relative horizontal-${type}-container`}>
                         <button onClick={() => scrollLeft()} className='scroll-btn-left'>
-                            <FaChevronLeft className='scroll-chevron' style={chevronStyles} />
+                            {/* Show this button if container can be scrolled left */}
+                            {scrollValue > 0 &&
+                                <FaChevronLeft className='scroll-chevron' style={chevronStyles} />
+                            }
                         </button>
 
                         <button onClick={() => scrollRight()} className='scroll-btn-right'>
-                            <FaChevronRight className='scroll-chevron' style={chevronStyles} />
+                            {/* show this cutton if container can be scrolled right */}
+                            {scrollValue < maxScrollLeft &&
+                                <FaChevronRight className='scroll-chevron' style={chevronStyles} />
+                            }
                         </button>
                     </div>
 
@@ -78,8 +90,8 @@ HorizontalScroll.propTypes = {
     gifs: PropTypes.object,
     type: PropTypes.string,
     styles: PropTypes.shape({
-        height: PropTypes.string,
-        width: PropTypes.string,
+        height: PropTypes.number,
+        width: PropTypes.number,
         borderRight: PropTypes.string
     })
 }
