@@ -4,7 +4,7 @@ This Giphy Clone was built using React Hooks, the GIPHY API, and SASS. This appl
 
 The site has been deployed with netlify and is live [here](https://thirsty-galileo-e135d3.netlify.app/)
 
-![Image of Project Home Page](https://i.ibb.co/zND8cFh/Screen-Shot-2020-10-16-at-2-10-40-PM.png)
+![Image of Project Home Page](https://ibb.co/L0svMT2)
 
 ### Component Tree
 
