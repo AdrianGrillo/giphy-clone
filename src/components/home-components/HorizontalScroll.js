@@ -10,16 +10,16 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
     }
 
     // Referencing the container we want to scroll with the buttons
-    let scrollContainer = React.useRef(0)
+    const scrollContainer = React.useRef(0)
     // This state property dictates whether or not scroll buttons will be shown
     const [scrollValue, setScrollValue] = React.useState(0)
 
     const scrollLeft = () => {
-        scrollContainer.current.scrollLeft -= 800;
+        scrollContainer.current.scrollLeft -= 800
     }
 
     const scrollRight = () => {
-        scrollContainer.current.scrollLeft += 800;
+        scrollContainer.current.scrollLeft += 800
     }
 
     const trackScroll = () => {
@@ -53,8 +53,8 @@ export default function HorizontalScroll({ icon, title, href, gifs, type, styles
                         </button>
 
                         <button onClick={() => scrollRight()} className='scroll-btn-right'>
-                            {/* show this cutton if container can be scrolled right */}
-                            {scrollValue < 7250 &&
+                            {/* Show this button if container can be scrolled right */}
+                            {scrollValue < 7450 &&
                                 <FaChevronRight className='scroll-chevron' style={chevronStyles} />
                             }
                         </button>
